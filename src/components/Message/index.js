@@ -36,13 +36,13 @@ const Message = ({ data, openThread, upvoteMessage }) => {
 						<p onClick={() => openThread()}>
 							<i className="fa fa-comment-o" aria-hidden="true"></i>
 							&nbsp;
-							{data.thread.length}{data.thread.length === 1 ? '' : ''}
+							{data.thread.length}
 						</p>
                     )}
 					<p onClick={handleUpvote}>
 						<i className="fa fa-thumbs-o-up" aria-hidden="true"></i>
 						&nbsp;
-						{data.upvotes.length}{data.upvotes.length === 1 ? '' : ''}
+						{data.upvotes.length}
 					</p>
 					<p>
 						<i className="fa fa-share-square-o" aria-hidden="true" />

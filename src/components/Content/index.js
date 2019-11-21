@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import moment from 'moment';
 import uuid from 'uuid';
+import { animateScroll } from "react-scroll";
 import './index.css';
 import Header from '../Header';
 import MessageInput from '../MessageInput';
@@ -43,7 +44,10 @@ const Content = () => {
 			setMessages(messages => addTopMessage(messages, message));
 		} else {
 			setMessages(messages => addThreadMessage(messages, thread, message));
-		}
+        }
+        animateScroll.scrollToBottom({
+            containerId: "messages-list"
+        });
 	};
 
 	const upvoteMessage = message => {
