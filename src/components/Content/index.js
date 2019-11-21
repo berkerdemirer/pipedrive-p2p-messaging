@@ -9,9 +9,11 @@ import defaultMessages from '../../data/messages';
 import addMessages from '../../data/add-messages';
 
 const userId = 1;
+const rootThread = -1;
 
 const Content = () => {
 	const [messages, setMessages] = useState(defaultMessages);
+	const [thread, setThread] = useState(rootThread);
 
 	useEffect(() => {
 		addMessages(setMessages);
@@ -28,12 +30,31 @@ const Content = () => {
 		]);
 	};
 
+	const filterMessages = messages => {
+		if (thread === rootThread) {
+			return messages;
+		} else {
+			return [messages[thread], ...messages[thread].thread];
+		}
+	};
+
+	const renderThreadLink = (message, i) => {
+		if (thread === rootThread && message.thread && message.thread.length > 0) {
+			return <span onClick={() => setThread(i)}>View thread</span>;
+		} else if (thread !== rootThread && i === 0) {
+			return <span onClick={() => setThread(rootThread)}>Close thread</span>;
+		}
+	};
+
 	return (
 		<div className="container">
 			<Header />
 			<div className="messages">
-				{messages.map((message, i) => (
-					<Message data={message} key={i} />
+				{filterMessages(messages).map((message, i) => (
+					<div key={i}>
+						<Message data={message} />
+						{renderThreadLink(message, i)}
+					</div>
 				))}
 			</div>
 			<MessageInput onEnter={addMessage} />
