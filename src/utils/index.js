@@ -1,5 +1,6 @@
 import L from 'leaflet';
 import users from '../data/users'
+import React from 'react';
 
 let map;
 let layerGroup;
@@ -45,7 +46,13 @@ export function renderMap() {
         });
         const markerObj = L.marker([user.location.lat, user.location.lng], {icon: customMarker}).addTo(map);
         return markerObj.bindPopup('' +
-            '<p>Request for a meeting with ' + user.name + '</p>');
+            '<div style="display: grid">'+ user.name + " is nearby" + '<button style="width: 90px;\n' +
+            '    height: 30px;\n' +
+            '    width: 100%;\n' +
+            '    margin-top: 10px;\n' +
+            '    background-color: #08a742;\n' +
+            '    color: #fff;\n' +
+            '    font-weight: 600;"> Get in Touch </button>' + '</div>');
     });
 
 }
