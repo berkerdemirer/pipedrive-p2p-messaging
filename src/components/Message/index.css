@@ -1,0 +1,17 @@
+.message-container{
+    display: flex;
+    flex-direction: row;
+    border: 1px solid white;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    margin-top: 0.5rem;
+    background-color: white;
+}
+.avatar{
+    flex: 1 0 0;
+}
+.message-data{
+    flex: 8 0 0;
+    margin-left: 5px;
+    margin-top: -8px;
+}
