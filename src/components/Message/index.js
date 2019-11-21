@@ -16,11 +16,11 @@ const Message = ({ data, id, openThread, upvoteMessage }) => {
 		setSentAt(data.sentAt.fromNow());
 	}, 1000);
 
-	const isUpvoted = data.upvotes.includes(userId);
+    const isOwnComment = data.userId === userId;
 
 	const handleUpvote = () => {
-		if (!isUpvoted && data.userId !== userId) {
-			upvoteMessage();
+		if (!isOwnComment) {
+            upvoteMessage();
 		}
 	};
 

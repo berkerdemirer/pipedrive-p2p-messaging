@@ -38,12 +38,15 @@ const Content = () => {
 	};
 
 	const upvoteMessage = id => {
-		const message = messages[id];
+        const message = messages[id];
+        const upvotes = !message.upvotes.includes(userId) ?
+            [...message.upvotes, userId]:
+            message.upvotes.filter(id => id !== userId);
 		setMessages(messages => [
 			...messages.slice(0, id),
 			{
 				...message,
-				upvotes: [...message.upvotes, userId],
+				upvotes,
 			},
 			...messages.slice(id + 1),
 		]);
@@ -79,7 +82,7 @@ const Content = () => {
 						<Message
 							data={message}
 							id={i}
-							openThread={() => setThread(i)}
+							openThread={() => thread === rootThread && setThread(i)}
 							upvoteMessage={() => upvoteMessage(i)}
 						/>
 						{renderThreadLink(message, i)}
