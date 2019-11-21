@@ -8,11 +8,7 @@ function Map() {
         renderMap();
     }, []);
 
-    return (
-        <>
-            <div id="map"/>
-        </>
-    );
+    return    <div id="map"/>;
 }
 
 export default Map;

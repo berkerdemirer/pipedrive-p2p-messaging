@@ -8,7 +8,7 @@ const seconds = s => s * 1000
 const addTopMessageAndScroll = (setMessages, message) => {
     setMessages(messages => addTopMessage(messages, message));
     animateScroll.scrollToBottom({
-        containerId: "messages"
+        containerId: "messages-list"
     });
 };
 

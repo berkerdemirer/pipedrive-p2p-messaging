@@ -5,6 +5,7 @@ import Header from '../Header';
 import MessageInput from '../MessageInput';
 
 import Message from '../Message';
+import Topics from '../Topics';
 import { addTopMessage, addThreadMessage } from '../../utils/messages';
 import defaultMessages from '../../data/messages';
 import addMessages from '../../data/add-messages';
@@ -76,7 +77,8 @@ const Content = () => {
 	return (
 		<div className="container">
 			<Header />
-			<div className="messages">
+			<Topics/>
+			<div className="messages" id="messages-list">
 				{filterMessages(messages).map((message, i) => (
 					<div key={message.content}>
 						<Message

@@ -1,0 +1,22 @@
+.filter-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    border: 1px solid white;
+    border-radius: 0.5rem;
+    padding: 5px;
+    margin-bottom: 5px;
+    width: 100%;
+    background-color: #ddddddb8;
+}
+.filter-container-item{
+   flex: 1 0 0;
+    align-self: center;
+}
+.filter-container-item-icon{
+    text-align: center;
+}
+.filter-container-item p {
+    padding: 0;
+    text-align: center;
+    margin-top: 0;
+}
