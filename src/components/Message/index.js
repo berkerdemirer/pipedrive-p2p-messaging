@@ -35,15 +35,17 @@ const Message = ({ data, openThread, upvoteMessage }) => {
 				    {data.thread && (
 						<p onClick={() => openThread()}>
 							<i className="fa fa-comment-o" aria-hidden="true"></i>
-							{data.thread.length} {data.thread.length === 1 ? 'comment' : 'comments'}
+							&nbsp;
+							{data.thread.length}{data.thread.length === 1 ? '' : ''}
 						</p>
                     )}
 					<p onClick={handleUpvote}>
 						<i className="fa fa-thumbs-o-up" aria-hidden="true"></i>
-						{data.upvotes.length} {data.upvotes.length === 1 ? 'like' : 'likes'}
+						&nbsp;
+						{data.upvotes.length}{data.upvotes.length === 1 ? '' : ''}
 					</p>
 					<p>
-						<i className="fa fa-share-square-o" aria-hidden="true" /> share
+						<i className="fa fa-share-square-o" aria-hidden="true" />
 					</p>
 				</div>
 

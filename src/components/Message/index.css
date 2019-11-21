@@ -32,9 +32,10 @@
     margin-bottom: 4px;
 }
 .message-actions{
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
     flex-direction: row;
-   width: 100%;
+    width: 25%;
 }
 .message-actions p{
     flex: 1 0 0;

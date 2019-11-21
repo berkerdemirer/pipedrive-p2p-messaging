@@ -1,8 +1,7 @@
 .filter-container{
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 23% 20% 20%;
     border: 1px solid white;
-    border-radius: 0.5rem;
     padding: 5px;
     margin-bottom: 5px;
     width: 100%;
@@ -11,7 +10,11 @@
 .filter-container-item{
    flex: 1 0 0;
    align-self: center;
-    padding: 7px;
+   display: inline-flex;
+}
+
+.search {
+    width: 100%;
 }
 
 .filter-container-item-icon{
@@ -20,7 +23,8 @@
 .filter-container-item p {
     padding: 0;
     text-align: center;
-    margin-top: 0;
+    margin-top: 8px;
+    margin-left: 5px;
 }
 .filter-selected {
     color: #08a742;

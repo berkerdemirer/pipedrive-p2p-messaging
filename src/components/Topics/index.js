@@ -5,6 +5,12 @@ import './index.css';
 function Topics({topics, topicChange}) {
     const [selected, setSelected]  = useState(topics[0]);
 
+    useEffect(() => {
+
+    }, []);
+    const topics = [ {name:'Knowledge',img:'/assets/topics/knowledge.png'},
+                      {name:'Random',img:'/assets/topics/random.png'},
+                    {name:'Issues',img:'/assets/topics/issue.png'}];
     return <div className="filter-container">
         {topics.map((topic,index) => (
             <div className="filter-container-item" key={index}>
