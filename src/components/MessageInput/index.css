@@ -1,0 +1,13 @@
+.messageInputContainer {
+    width: 50%;
+    height: 70px;
+    background-color: #fff;
+    position: fixed;
+    bottom: 0;
+}
+
+.input{
+    height: 40px;
+    margin: 12px;
+    width: 94%;
+}
