@@ -22,29 +22,29 @@ const addThreadMessage = (setMessages, topMessageIdx, message) => {
 }
 
 const addMessages = async (setMessages) => {
-    await delay(seconds(7));
-
-    addTopMessage(setMessages, {
-        user_id: 5,
-        content: `What's good my fellow sales peeps?`,
-        sent_at: moment(),
-        threads: []
-    });
-
-    await delay(seconds(2));
-
-    addTopMessage(setMessages, {
-        user_id: 3,
-        content: `Does anyone know how to close a deal? :)`,
-        sent_at: moment(),
-    });
-
     await delay(seconds(3));
 
     addTopMessage(setMessages, {
-        user_id: 3,
+        userId: 5,
+        content: `What's good my fellow sales peeps?`,
+        sentAt: moment(),
+        threads: []
+    });
+
+    await delay(seconds(1));
+
+    addTopMessage(setMessages, {
+        userId: 3,
+        content: `Does anyone know how to close a deal? :)`,
+        sentAt: moment(),
+    });
+
+    await delay(seconds(4));
+
+    addTopMessage(setMessages, {
+        userId: 3,
         content: `Where did I leave my keys???`,
-        sent_at: moment(),
+        sentAt: moment(),
     });
 };
 
