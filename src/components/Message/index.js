@@ -19,7 +19,7 @@ const Message = ({ data, id, openThread, upvoteMessage }) => {
 	const isUpvoted = data.upvotes.includes(userId);
 
 	const handleUpvote = () => {
-		if (!isUpvoted) {
+		if (!isUpvoted && id === userId) {
 			upvoteMessage();
 		}
 	};
@@ -35,12 +35,12 @@ const Message = ({ data, id, openThread, upvoteMessage }) => {
 				    {data.thread && (
 						<p onClick={() => openThread()}>
 							<i className="fa fa-comment-o" aria-hidden="true"></i>
-							{data.thread.length} {data.thread.length > 1 ? 'comments' : 'comment'}
+							{data.thread.length} {data.thread.length === 1 ? 'comment' : 'comments'}
 						</p>
                     )}
 					<p onClick={handleUpvote}>
 						<i className="fa fa-thumbs-o-up" aria-hidden="true"></i>
-						{data.upvotes.length} {data.upvotes.length > 1 ? 'likes' : 'like'}
+						{data.upvotes.length} {data.upvotes.length === 1 ? 'like' : 'likes'}
 					</p>
 					<p>
 						<i className="fa fa-share-square-o" aria-hidden="true" /> share
