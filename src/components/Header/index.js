@@ -3,11 +3,10 @@ import './index.css'
 
 const Header = () => {
     return (
-      <div className="header">
-          <div>
-                <img src="/assets/Pipedrive_full_logo_dark.png" alt="logo" className="logo"/>
-          </div>
-      </div>
+        <div className="header">
+            <img src="/assets/Pipedrive_full_logo_dark.png" alt="logo" className="logo"/>
+            <div className="subtitle">connect.nearby</div>
+        </div>
     );
 };
 

@@ -1,11 +1,25 @@
+@font-face {
+    font-family: Panton;
+    src: url("/assets/Panton-BlackCaps.otf") format("opentype");
+}
+
 .header {
     width: 100%;
     height: 60px;
     background-color: #fff;
+    display: flex;
 }
 
 .logo {
     width: 110px;
-    padding: 8px;
+    margin-top: 10px;
+    height: 40px;
 }
 
+.subtitle {
+    font-family: Panton, sans-serif;
+    width: fit-content;
+    margin-top: 25px;
+    font-size: 10px;
+    color: #303030;
+}
