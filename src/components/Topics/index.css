@@ -10,8 +10,10 @@
 }
 .filter-container-item{
    flex: 1 0 0;
-    align-self: center;
+   align-self: center;
+    padding: 7px;
 }
+
 .filter-container-item-icon{
     text-align: center;
 }
@@ -19,4 +21,7 @@
     padding: 0;
     text-align: center;
     margin-top: 0;
+}
+.filter-selected {
+    color: #08a742;
 }

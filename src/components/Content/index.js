@@ -16,7 +16,12 @@ const rootThread = -1;
 const Content = () => {
 	const [messages, setMessages] = useState(defaultMessages);
 	const [thread, setThread] = useState(rootThread);
+	const topics = [ {name:'Knowledge',img:'/assets/topics/knowledge.png'},
+		{name:'Issues',img:'/assets/topics/issue.png'},
+		{name:'Random',img:'/assets/topics/random.png'}];
 
+	const topicChange = (item)=>{
+	}
 	useEffect(() => {
 		addMessages(setMessages);
 	}, []);
@@ -77,7 +82,7 @@ const Content = () => {
 	return (
 		<div className="container">
 			<Header />
-			<Topics/>
+			<Topics topics ={topics} topicChange ={topicChange} />
 			<div className="messages" id="messages-list">
 				{filterMessages(messages).map((message, i) => (
 					<div key={message.content}>
