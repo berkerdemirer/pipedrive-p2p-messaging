@@ -1,4 +1,4 @@
-module.exports = {
+const users = {
 	1: {
 		name: 'Lex Brown',
 		company: 'Microsoft',
@@ -30,3 +30,5 @@ module.exports = {
 		location: { lat: 27.984245, lng: -82.762648 },
 	},
 };
+
+export default users;

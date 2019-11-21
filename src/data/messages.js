@@ -1,7 +1,7 @@
-const moment = require('moment');
+import moment from 'moment'
 const demoStart = moment.now();
 
-module.exports = [
+const messages = [
     {
         user_id: 1,
         content: 'hey, anyone seen that Joker movie? is it any good?',
@@ -54,6 +54,6 @@ module.exports = [
             }
         ]
     }
-
-
 ]
+
+export default messages;
