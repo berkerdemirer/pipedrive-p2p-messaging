@@ -7,7 +7,7 @@ import users from '../../data/users';
 
 const userId = 1;
 
-const Message = ({ data, id, openThread, upvoteMessage }) => {
+const Message = ({ data, openThread, upvoteMessage }) => {
 	const user = users[data.userId];
 	const [sentAt, setSentAt] = useState(data.sentAt.fromNow());
 	useEffect(() => {}, []);
@@ -53,7 +53,6 @@ const Message = ({ data, id, openThread, upvoteMessage }) => {
 };
 Message.propTypes = {
 	data: PropTypes.object.isRequired,
-	id: PropTypes.number.isRequired,
 	openThread: PropTypes.func.isRequired,
 };
 export default Message;

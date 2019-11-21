@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import moment from 'moment';
+import uuid from 'uuid';
 import './index.css';
 import Header from '../Header';
 import MessageInput from '../MessageInput';
 
 import Message from '../Message';
 import Topics from '../Topics';
-import { addTopMessage, addThreadMessage } from '../../utils/messages';
+import { addTopMessage, addThreadMessage, updateMessage } from '../../utils/messages';
 import defaultMessages from '../../data/messages';
 import addMessages from '../../data/add-messages';
 
@@ -27,42 +28,41 @@ const Content = () => {
 	}, []);
 
 	const createMessage = content => ({
+        id: uuid(),
 		userId,
 		content,
 		sentAt: moment(),
-        upvotes: [],
-        ...(thread === rootThread && { thread: [] }),
+		upvotes: [],
+		...(thread === rootThread && { thread: [] }),
 	});
 
 	const addMessage = content => {
-        const message = createMessage(content);
+		const message = createMessage(content);
 		if (thread === rootThread) {
 			setMessages(messages => addTopMessage(messages, message));
 		} else {
-            setMessages(messages => addThreadMessage(messages, thread, message));
+            console.log(message)
+			setMessages(messages => addThreadMessage(messages, thread, message));
 		}
 	};
 
-	const upvoteMessage = id => {
-        const message = messages[id];
-        const upvotes = !message.upvotes.includes(userId) ?
-            [...message.upvotes, userId]:
-            message.upvotes.filter(id => id !== userId);
-		setMessages(messages => [
-			...messages.slice(0, id),
-			{
+	const upvoteMessage = message => {
+		setMessages(messages =>
+			updateMessage(messages, message.id, thread, message => ({
 				...message,
-				upvotes,
-			},
-			...messages.slice(id + 1),
-		]);
+				upvotes: !message.upvotes.includes(userId)
+					? [...message.upvotes, userId]
+					: message.upvotes.filter(id => id !== userId),
+			})),
+		);
 	};
 
 	const filterMessages = messages => {
 		if (thread === rootThread) {
 			return messages;
-		} else {
-			return [messages[thread], ...messages[thread].thread];
+        } else {
+            const threadMessage = messages.find(message => message.id === thread)
+			return [threadMessage, ...threadMessage.thread];
 		}
 	};
 
@@ -85,12 +85,11 @@ const Content = () => {
 			<Topics topics ={topics} topicChange ={topicChange} />
 			<div className="messages" id="messages-list">
 				{filterMessages(messages).map((message, i) => (
-					<div key={message.content}>
+					<div key={message.id}>
 						<Message
 							data={message}
-							id={i}
-							openThread={() => thread === rootThread && setThread(i)}
-							upvoteMessage={() => upvoteMessage(i)}
+							openThread={() => thread === rootThread && setThread(message.id)}
+							upvoteMessage={() => upvoteMessage(message)}
 						/>
 						{renderThreadLink(message, i)}
 					</div>
