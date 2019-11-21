@@ -17,6 +17,7 @@ const messages = [
             }
         ],
         upvotes: [],
+        topic: 3,
     },
     {
         id: '9ced083a-7fca-4066-8f9d-0e66b2077c2f',
@@ -33,6 +34,7 @@ const messages = [
             }
         ],
         upvotes: [1, 3],
+        topic: 2,
     },
     {
         id: '6d08dbfb-9720-4f15-94c8-ce33089c6f2d',
@@ -41,6 +43,7 @@ const messages = [
         sentAt: moment(start).subtract(5, 'minutes').subtract(35, 'seconds'),
         thread: [],
         upvotes: [],
+        topic: 2,
     }, {
         id: 'e88911be-bf36-44a8-80aa-b59c32e9c705',
         userId: 3,
@@ -48,6 +51,7 @@ const messages = [
         sentAt: moment(start).subtract(5, 'minutes').subtract(10, 'seconds'),
         thread: [],
         upvotes: [],
+        topic: 2,
     }, {
         id: '776df791-4f32-463f-b5e4-ed12b41b5a24',
         userId: 4,
@@ -68,9 +72,10 @@ const messages = [
                     its what any person in todays hectic world should have in their home library`,
                 sentAt: moment(start).subtract(1, 'minutes').subtract(1, 'seconds'),
                 upvotes: [2, 3, 4, 5],
-            }
+            },
         ],
         upvotes: [],
+        topic: 1,
     }
 ]
 

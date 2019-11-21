@@ -17,23 +17,24 @@ const rootThread = -1;
 const Content = () => {
 	const [messages, setMessages] = useState(defaultMessages);
 	const [thread, setThread] = useState(rootThread);
-	const topics = [ {name:'Knowledge',img:'/assets/topics/knowledge.png'},
-		{name:'Issues',img:'/assets/topics/issue.png'},
-		{name:'Random',img:'/assets/topics/random.png'}];
+	const topics = [
+		{ id: 1, name: 'Knowledge', img: '/assets/topics/knowledge.png' },
+		{ id: 2, name: 'Issues', img: '/assets/topics/issue.png' },
+		{ id: 3, name: 'Random', img: '/assets/topics/random.png' },
+    ];
+    const [topic, setTopic] = useState(topics[0]);
 
-	const topicChange = (item)=>{
-	}
 	useEffect(() => {
 		addMessages(setMessages);
 	}, []);
 
 	const createMessage = content => ({
-        id: uuid(),
+		id: uuid(),
 		userId,
 		content,
 		sentAt: moment(),
-		upvotes: [],
-		...(thread === rootThread && { thread: [] }),
+        upvotes: [],
+        ...(thread === rootThread && { thread: [], topic: topic.id }),
 	});
 
 	const addMessage = content => {
@@ -41,7 +42,6 @@ const Content = () => {
 		if (thread === rootThread) {
 			setMessages(messages => addTopMessage(messages, message));
 		} else {
-            console.log(message)
 			setMessages(messages => addThreadMessage(messages, thread, message));
 		}
 	};
@@ -59,9 +59,9 @@ const Content = () => {
 
 	const filterMessages = messages => {
 		if (thread === rootThread) {
-			return messages;
-        } else {
-            const threadMessage = messages.find(message => message.id === thread)
+			return messages.filter(message => message.topic === topic.id);
+		} else {
+			const threadMessage = messages.find(message => message.id === thread);
 			return [threadMessage, ...threadMessage.thread];
 		}
 	};
@@ -82,7 +82,7 @@ const Content = () => {
 	return (
 		<div className="container">
 			<Header />
-			<Topics topics ={topics} topicChange ={topicChange} />
+			<Topics topics ={topics} topicChange ={setTopic} />
 			<div className="messages" id="messages-list">
 				{filterMessages(messages).map((message, i) => (
 					<div key={message.id}>

@@ -16,7 +16,7 @@ function Topics({topics, topicChange}) {
                 <Avatar src={topic.img} round="50px" size="30" fgColor="red" color="#d1dff0" />
             </div>
              <p className={selected.name===topic.name?'filter-selected':''}
-                onClick={()=>{ setSelected(topic); topicChange(topic.name)}}>
+                onClick={()=>{ setSelected(topic); topicChange(topic)}}>
                  {topic.name}  </p>
             </div>
         ))}

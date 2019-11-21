@@ -22,6 +22,7 @@ const addMessages = async (setMessages) => {
         sentAt: moment(),
         thread: [],
         upvotes: [],
+        topic: 3,
     });
 
     await delay(seconds(1));
@@ -33,6 +34,7 @@ const addMessages = async (setMessages) => {
         sentAt: moment(),
         thread: [],
         upvotes: [],
+        topic: 2,
     });
 
     await delay(seconds(4));
@@ -44,6 +46,7 @@ const addMessages = async (setMessages) => {
         sentAt: moment(),
         thread: [],
         upvotes: [],
+        topic: 2,
     });
 };
 
