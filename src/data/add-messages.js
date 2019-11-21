@@ -31,7 +31,7 @@ const addMessages = async (setMessages) => {
         userId: 5,
         content: `What's good my fellow sales peeps?`,
         sentAt: moment(),
-        threads: []
+        thread: []
     });
 
     await delay(seconds(1));
@@ -40,6 +40,7 @@ const addMessages = async (setMessages) => {
         userId: 3,
         content: `Does anyone know how to close a deal? :)`,
         sentAt: moment(),
+        thread: []
     });
 
     await delay(seconds(4));
@@ -48,6 +49,7 @@ const addMessages = async (setMessages) => {
         userId: 3,
         content: `Where did I leave my keys???`,
         sentAt: moment(),
+        thread: []
     });
 };
 

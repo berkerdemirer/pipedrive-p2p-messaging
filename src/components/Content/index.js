@@ -26,6 +26,7 @@ const Content = () => {
 				userId,
 				content,
 				sentAt: moment(),
+				thread: [],
 			},
 		]);
 	};

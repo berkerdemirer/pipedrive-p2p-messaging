@@ -4,7 +4,7 @@
     border: 1px solid white;
     border-radius: 0.5rem;
     padding: 1rem;
-    margin:12px;
+    margin:24px;
     background-color: white;
 }
 .avatar{
@@ -38,4 +38,5 @@
 }
 .message-actions p{
     flex: 1 0 0;
+    cursor: pointer;
 }
