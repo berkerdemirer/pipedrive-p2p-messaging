@@ -5,6 +5,7 @@ import Header from '../Header';
 import MessageInput from '../MessageInput';
 
 import Message from '../Message';
+import { addTopMessage, addThreadMessage } from '../../utils/messages';
 import defaultMessages from '../../data/messages';
 import addMessages from '../../data/add-messages';
 
@@ -19,30 +20,34 @@ const Content = () => {
 		addMessages(setMessages);
 	}, []);
 
-	const addMessage = content => {
-		setMessages(messages => [
-			...messages,
-			{
-				userId,
-				content,
-				sentAt: moment(),
-                thread: [],
-                upvotes: [],
-			},
-		]);
-    }
+	const createMessage = content => ({
+		userId,
+		content,
+		sentAt: moment(),
+        upvotes: [],
+        ...(thread === rootThread && { thread: [] }),
+	});
 
-    const upvoteMessage = id => {
-        const message = messages[id];
-        setMessages(messages => [
-            ...messages.slice(0, id),
-            {
-                ...message,
-                upvotes: [...message.upvotes, userId],
-            },
-            ...messages.slice(id + 1)
-        ]);
-    }
+	const addMessage = content => {
+        const message = createMessage(content);
+		if (thread === rootThread) {
+			setMessages(messages => addTopMessage(messages, message));
+		} else {
+            setMessages(messages => addThreadMessage(messages, thread, message));
+		}
+	};
+
+	const upvoteMessage = id => {
+		const message = messages[id];
+		setMessages(messages => [
+			...messages.slice(0, id),
+			{
+				...message,
+				upvotes: [...message.upvotes, userId],
+			},
+			...messages.slice(id + 1),
+		]);
+	};
 
 	const filterMessages = messages => {
 		if (thread === rootThread) {
@@ -53,13 +58,15 @@ const Content = () => {
 	};
 
 	const renderThreadLink = (message, i) => {
-
-	    if (thread !== rootThread && i === 0) {
-			return <div className="message-thread-header">
-                    <span className="message-thread-text" >Thread</span>
-                    <span className="message-thread-close" onClick={() => setThread(rootThread)}>
-                        <i className="fa fa-times" aria-hidden="true"></i></span>
-                  </div>;
+		if (thread !== rootThread && i === 0) {
+			return (
+				<div className="message-thread-header">
+					<span className="message-thread-text">Thread</span>
+					<span className="message-thread-close" onClick={() => setThread(rootThread)}>
+						<i className="fa fa-times" aria-hidden="true"></i>
+					</span>
+				</div>
+			);
 		}
 	};
 
@@ -69,13 +76,13 @@ const Content = () => {
 			<div className="messages">
 				{filterMessages(messages).map((message, i) => (
 					<div key={message.content}>
-
-						<Message data={message}
-                                 id={i}
-                                 openThread={() => setThread(i)}
-                                 upvoteMessage={() => upvoteMessage(i)}
-                        />
-                        {renderThreadLink(message,i)}
+						<Message
+							data={message}
+							id={i}
+							openThread={() => setThread(i)}
+							upvoteMessage={() => upvoteMessage(i)}
+						/>
+						{renderThreadLink(message, i)}
 					</div>
 				))}
 			</div>
