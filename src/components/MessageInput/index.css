@@ -1,3 +1,4 @@
+
 .messageInputContainer {
     width: 50%;
     height: 70px;
@@ -16,4 +17,12 @@
     height: 40px;
     margin: 12px;
     width: 10%;
+}
+
+.send-message-btn {
+    width: 90px;
+    height: 50px;
+    background-color: #08a742;
+    color: #fff;
+    font-weight: 600;
 }

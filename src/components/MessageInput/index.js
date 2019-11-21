@@ -7,7 +7,7 @@ const MessageInput = ({ onEnter }) => {
     const handleEnter = () => {
         onEnter(content);
         setContent('');
-    }
+    };
 
 	return (
 		<div>
@@ -19,7 +19,7 @@ const MessageInput = ({ onEnter }) => {
 					value={content}
 					onChange={e => setContent(e.target.value)}
 				/>
-				<button onClick={handleEnter}>Enter</button>
+				<button className="send-message-btn" onClick={handleEnter}>Enter</button>
 				<div className="messageToolbar" />
 			</div>
 		</div>
