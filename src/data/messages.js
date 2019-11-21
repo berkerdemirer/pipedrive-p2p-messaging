@@ -1,5 +1,5 @@
 import moment from 'moment'
-const demoStart = moment.now();
+const demoStart = moment();
 
 const messages = [
     {
