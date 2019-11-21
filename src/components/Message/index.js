@@ -19,7 +19,7 @@ const Message = ({ data, id, openThread, upvoteMessage }) => {
 	const isUpvoted = data.upvotes.includes(userId);
 
 	const handleUpvote = () => {
-		if (!isUpvoted && id === userId) {
+		if (!isUpvoted && data.userId !== userId) {
 			upvoteMessage();
 		}
 	};
