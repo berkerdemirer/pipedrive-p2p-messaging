@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import Avatar from 'react-avatar';
 import './index.css';
 
@@ -8,9 +8,7 @@ function Topics({topics, topicChange}) {
     useEffect(() => {
 
     }, []);
-    const topics = [ {name:'Knowledge',img:'/assets/topics/knowledge.png'},
-                      {name:'Random',img:'/assets/topics/random.png'},
-                    {name:'Issues',img:'/assets/topics/issue.png'}];
+
     return <div className="filter-container">
         {topics.map((topic,index) => (
             <div className="filter-container-item" key={index}>
