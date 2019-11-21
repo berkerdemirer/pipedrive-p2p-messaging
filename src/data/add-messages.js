@@ -1,10 +1,13 @@
 import delay from 'delay';
 import moment from 'moment';
-
+import { animateScroll } from "react-scroll";
 const seconds = s => s * 1000
 
 const addTopMessage = (setMessages, message) => {
     setMessages(messages => [...messages, message]);
+    animateScroll.scrollToBottom({
+        containerId: "messages"
+    });
 };
 
 const addThreadMessage = (setMessages, topMessageIdx, message) => {
@@ -22,7 +25,7 @@ const addThreadMessage = (setMessages, topMessageIdx, message) => {
 }
 
 const addMessages = async (setMessages) => {
-    await delay(seconds(3));
+    await delay(seconds(2));
 
     addTopMessage(setMessages, {
         userId: 5,
