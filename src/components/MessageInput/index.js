@@ -20,7 +20,6 @@ const MessageInput = ({ onEnter }) => {
 					onChange={e => setContent(e.target.value)}
 				/>
 				<button className="send-message-btn" onClick={handleEnter}>Enter</button>
-				<div className="messageToolbar" />
 			</div>
 		</div>
 	);

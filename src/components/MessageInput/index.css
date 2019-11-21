@@ -5,12 +5,13 @@
     background-color: #fff;
     position: fixed;
     bottom: 0;
+    grid-template-columns: 4fr 1fr;
+    display: grid;
 }
 
 .input {
     height: 40px;
     margin: 12px;
-    width: 84%;
 }
 
 .button {
@@ -20,9 +21,10 @@
 }
 
 .send-message-btn {
-    width: 90px;
+    width: 85%;
     height: 50px;
     background-color: #08a742;
     color: #fff;
     font-weight: 600;
+    margin:10px;
 }
