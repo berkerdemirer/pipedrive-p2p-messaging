@@ -6,3 +6,22 @@
     height: 85vh;
     overflow-y: auto;
 }
+.message-thread-header{
+    display: flex;
+    flex-direction: row;
+    border: 1px solid white;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    margin-top: 0.5rem;
+    background-color: #ddddddb8;
+}
+.message-thread-text{
+  flex: 1 0 0;
+  align-self: flex-start;
+  font-weight: bold;
+}
+.message-thread-close{
+    flex: 8 0 0;
+    align-self: flex-end;
+    text-align: end;
+}

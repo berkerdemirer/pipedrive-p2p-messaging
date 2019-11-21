@@ -39,10 +39,13 @@ const Content = () => {
 	};
 
 	const renderThreadLink = (message, i) => {
-		if (thread === rootThread && message.thread && message.thread.length > 0) {
-			return <span onClick={() => setThread(i)}>View thread</span>;
-		} else if (thread !== rootThread && i === 0) {
-			return <span onClick={() => setThread(rootThread)}>Close thread</span>;
+
+	    if (thread !== rootThread && i === 0) {
+			return <div className="message-thread-header">
+                    <span className="message-thread-text" >Thread</span>
+                    <span className="message-thread-close" onClick={() => setThread(rootThread)}>
+                        <i className="fa fa-times" aria-hidden="true"></i></span>
+                  </div>;
 		}
 	};
 
@@ -52,8 +55,12 @@ const Content = () => {
 			<div className="messages">
 				{filterMessages(messages).map((message, i) => (
 					<div key={i}>
-						<Message data={message} />
-						{renderThreadLink(message, i)}
+
+						<Message data={message}
+                                 id={i}
+                                 openThread ={(message,i)=>setThread(i)}
+                        />
+                        {renderThreadLink(message,i)}
 					</div>
 				))}
 			</div>

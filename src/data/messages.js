@@ -4,7 +4,7 @@ const start = moment();
 const messages = [
     {
         userId: 1,
-        content: 'hey, anyone seen that Joker movie? is it any good?',
+        content: 'Hey, anyone seen that Joker movie? is it any good?',
         sentAt: moment(start).subtract(12, 'minutes'),
         thread: [
             {

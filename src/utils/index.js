@@ -1,6 +1,5 @@
 import L from 'leaflet';
 import users from '../data/users'
-import React from 'react';
 
 let map;
 let layerGroup;
