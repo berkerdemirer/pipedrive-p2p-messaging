@@ -26,10 +26,23 @@ const Content = () => {
 				userId,
 				content,
 				sentAt: moment(),
-				thread: [],
+                thread: [],
+                upvotes: [],
 			},
 		]);
-	};
+    }
+
+    const upvoteMessage = id => {
+        const message = messages[id];
+        setMessages(messages => [
+            ...messages.slice(0, id),
+            {
+                ...message,
+                upvotes: [...message.upvotes, userId],
+            },
+            ...messages.slice(id + 1)
+        ]);
+    }
 
 	const filterMessages = messages => {
 		if (thread === rootThread) {
@@ -55,11 +68,12 @@ const Content = () => {
 			<Header />
 			<div className="messages">
 				{filterMessages(messages).map((message, i) => (
-					<div key={i}>
+					<div key={message.content}>
 
 						<Message data={message}
                                  id={i}
-                                 openThread ={(message,i)=>setThread(i)}
+                                 openThread={() => setThread(i)}
+                                 upvoteMessage={() => upvoteMessage(i)}
                         />
                         {renderThreadLink(message,i)}
 					</div>
