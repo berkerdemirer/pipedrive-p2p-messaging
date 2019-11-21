@@ -9,25 +9,25 @@ const users = {
 		name: 'Adam Bermudez',
 		company: 'Taxify',
 		avatar: '/assets/avatars/user2.jpeg',
-		location: { lat: 27.88713, lng: -82.797145 },
+		location: { lat: 27.833606, lng: -82.720909 },
 	},
 	3: {
 		name: 'Coriena Merejo',
 		company: 'Uber',
 		avatar: '/assets/avatars/user3.jpeg',
-		location: { lat: 27.821588, lng: -82.63569 },
+		location: { lat: 27.836148, lng: -82.702874 },
 	},
 	4: {
 		name: 'Jodie Rose',
 		company: 'Bank of America',
 		avatar: '/assets/avatars/user4.jpeg',
-		location: { lat: 27.770744, lng: -82.729506 },
+		location: { lat: 27.836108, lng: -82.702463 },
 	},
 	5: {
 		name: 'Samantha Dedea',
 		company: 'Blizzard Entertainment',
 		avatar: '/assets/avatars/user5.jpeg',
-		location: { lat: 27.984245, lng: -82.762648 },
+		location: { lat: 27.818030, lng: -82.712316 },
 	},
 };
 
