@@ -3,7 +3,7 @@
     flex-direction: row;
     border: 1px solid white;
     border-radius: 0.5rem;
-    padding: 1rem;
+    padding: 12px;
     margin:24px;
     background-color: white;
 }
@@ -12,7 +12,7 @@
 }
 .message-data{
     flex: 8 0 0;
-    margin-left: 5px;
+    margin-left: 10px;
     margin-top: -8px;
 
 }
@@ -27,13 +27,14 @@
     margin-bottom: 4px;
 }
 .message-data-text{
-    font-size: large;
+    font-size: 16px;
     margin-top: 4px;
     margin-bottom: 4px;
 }
 .message-actions{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 30px;
     flex-direction: row;
     width: 25%;
 }
