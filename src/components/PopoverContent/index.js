@@ -47,7 +47,7 @@ const PopoverContent = ({user}) => {
           </div>
           <div className="popover-text">
               <Avatar src='/assets/interests/deals.png' round="50px" size="25" color="#d1dff0" />
-              <span> Interested in having a leads </span>
+              <span> Interested in discussing leads </span>
           </div>
           <button className="get-in-touch" onClick={openModal}>
               Schedule Meeting</button>
