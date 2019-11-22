@@ -22,15 +22,26 @@ const messages = [
     {
         id: '9ced083a-7fca-4066-8f9d-0e66b2077c2f',
         userId: 2,
-        content: 'I guess this is one of THOSE days... Anyone else could use a cheer-me-up right now?',
+        content: 'Closing deals with new clients can be hectic but I am getting good at this!',
         sentAt: moment(start).subtract(6, 'minutes').subtract(11, 'seconds'),
         thread: [
             {
-                id: '8dfa9a5a-928d-4617-b27e-53b8ca239f38',
+                id: '5219119a-faee-4ae3-8d67-0075185f9090',
                 userId: 1,
-                content: 'hang in there. you just need 1 win to get right back on the horse. you got it ;)',
-                sentAt: moment(start).subtract(1, 'minutes').subtract(44, 'seconds'),
-                upvotes: [],
+                content: `Coffee is for closers.Since, I’m not closing
+                Can I buy you a cup?
+                `,
+                sentAt: moment(start).subtract(4, 'minutes').subtract(43, 'seconds'),
+                upvotes: [1],
+            },
+            {
+                id: '5219119a-faee-4ae3-8d67-0075185f9091',
+                userId: 2,
+                content: `I’m booked today,But please free to book  a meeting using my
+                Scheduler link
+                `,
+                sentAt: moment(start).subtract(3, 'minutes').subtract(12, 'seconds'),
+                upvotes: [1],
             }
         ],
         upvotes: [1, 3],
@@ -43,7 +54,7 @@ const messages = [
         sentAt: moment(start).subtract(5, 'minutes').subtract(35, 'seconds'),
         thread: [],
         upvotes: [],
-        topic: 2,
+        topic: 3,
     }, {
         id: 'e88911be-bf36-44a8-80aa-b59c32e9c705',
         userId: 3,
@@ -51,7 +62,7 @@ const messages = [
         sentAt: moment(start).subtract(5, 'minutes').subtract(10, 'seconds'),
         thread: [],
         upvotes: [],
-        topic: 2,
+        topic: 3,
     }, {
         id: '776df791-4f32-463f-b5e4-ed12b41b5a24',
         userId: 3,
