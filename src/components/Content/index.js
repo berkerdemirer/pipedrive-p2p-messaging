@@ -27,7 +27,14 @@ const Content = () => {
 
 	useEffect(() => {
 		addMessages(setMessages);
-    }, []);
+	}, []);
+
+	useEffect(() => {
+		animateScroll.scrollToBottom({
+			containerId: "messages-list",
+			duration: 300,
+        });
+    }, [messages]);
 
 	const createMessage = content => ({
 		id: uuid(),
@@ -45,9 +52,6 @@ const Content = () => {
 		} else {
 			setMessages(messages => addThreadMessage(messages, thread, message));
         }
-        animateScroll.scrollToBottom({
-            containerId: "messages-list"
-        });
     };
 
     const handleTopicChange = topic => {

@@ -3,8 +3,9 @@
 }
 .messages {
     width: 100%;
-    height: 78vh;
+    height: 75vh;
     overflow-y: auto;
+    margin-bottom: 7px;
 }
 
 .message-thread-header{

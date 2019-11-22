@@ -1,14 +1,10 @@
 import React, { useState } from 'react';
 import './index.css';
-import {animateScroll} from "react-scroll/modules";
 
 const MessageInput = ({ onEnter }) => {
     const [content, setContent] = useState('');
 
     const handleEnter = () => {
-		animateScroll.scrollToBottom({
-			containerId: "messages-list"
-		});
 		if(content !== '') {
 			onEnter(content);
 			setContent('');
@@ -17,9 +13,6 @@ const MessageInput = ({ onEnter }) => {
 
 	const keyPress = (e) => {
 		if(e.keyCode === 13){
-			animateScroll.scrollToBottom({
-				containerId: "messages-list"
-			});
 			if(content !== ''){
 				onEnter(content);
 				setContent('');
