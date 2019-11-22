@@ -53,6 +53,10 @@ const Message = ({ data, openThread, upvoteMessage }) => {
 					<img src='https://support.pipedrive.com/hc/article_attachments/360003115857/Screen_Shot_2019-06-26_at_7.20.18_PM.png'/>
 				:null}
 
+				{data.id==='776df791-4f32-463f-b5e4-ed12b41b5a534'?
+					<img src='/assets/quotes/pipelines.png' width='300px'/>
+				:null}
+
 				<div className="message-actions">
 				    {data.thread && (
 						<p className="message-actions-hover" onClick={() => openThread()}>

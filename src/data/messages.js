@@ -76,14 +76,23 @@ const messages = [
                 sentAt: moment(start).subtract(2, 'minutes').subtract(11, 'seconds'),
                 upvotes: [],
             },
+        ],
+        upvotes: [],
+        topic: 1,
+    },
+    {
+        id: '776df791-4f32-463f-b5e4-ed12dwb41b5a534',
+        userId: 4,
+        content: `Getting better at pipedrive pipelines :)`,
+        sentAt: moment(start).subtract(3, 'minutes').subtract(58, 'seconds'),
+        thread: [
             {
-                id: '663dc4cc-a814-41f5-8050-e7205f829938',
-                userId: 1,
-                content: `i would recommend "why we sleep". dont get confused by the title -
-                    its what any person in todays hectic world should have in their home library`,
-                sentAt: moment(start).subtract(1, 'minutes').subtract(1, 'seconds'),
-                upvotes: [2, 3, 4, 5],
-            },
+                id: '44e7155a-431a-40a2-8a18-b53eee6a4277ed',
+                userId: 2,
+                content: `This helped me a lot`,
+                sentAt: moment(start).subtract(2, 'minutes').subtract(11, 'seconds'),
+                upvotes: [],
+            }
         ],
         upvotes: [],
         topic: 1,
