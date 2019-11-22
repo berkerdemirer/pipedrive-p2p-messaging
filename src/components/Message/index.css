@@ -41,3 +41,11 @@
     flex: 1 0 0;
     cursor: pointer;
 }
+
+.message-actions-active{
+    color: #08a742;
+}
+
+.message-actions-hover:hover{
+    color: #08a742;
+}

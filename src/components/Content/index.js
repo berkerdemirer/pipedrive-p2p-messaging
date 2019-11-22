@@ -27,7 +27,7 @@ const Content = () => {
 
 	useEffect(() => {
 		addMessages(setMessages);
-	}, []);
+    }, []);
 
 	const createMessage = content => ({
 		id: uuid(),
@@ -48,7 +48,12 @@ const Content = () => {
         animateScroll.scrollToBottom({
             containerId: "messages-list"
         });
-	};
+    };
+
+    const handleTopicChange = topic => {
+        setThread(rootThread);
+        setTopic(topic);
+    }
 
 	const upvoteMessage = message => {
 		setMessages(messages =>
@@ -75,8 +80,8 @@ const Content = () => {
 			return (
 				<div className="message-thread-header">
 					<span className="message-thread-text">Thread</span>
-					<span className="message-thread-close" onClick={() => setThread(rootThread)}>
-						<i className="fa fa-times" aria-hidden="true"></i>
+					<span className="message-thread-close">
+						<i className="fa fa-times" aria-hidden="true" onClick={() => setThread(rootThread)}></i>
 					</span>
 				</div>
 			);
@@ -86,13 +91,13 @@ const Content = () => {
 	return (
 		<div className="container">
 			<Header />
-			<Topics topics ={topics} topicChange ={setTopic} />
+			<Topics topics ={topics} topicChange={handleTopicChange} />
 			<div className="messages" id="messages-list">
 				{filterMessages(messages).map((message, i) => (
 					<div key={message.id}>
 						<Message
 							data={message}
-							openThread={() => thread === rootThread && setThread(message.id)}
+							openThread={() => thread === rootThread ? setThread(message.id): setThread(rootThread)}
 							upvoteMessage={() => upvoteMessage(message)}
 						/>
 						{renderThreadLink(message, i)}
