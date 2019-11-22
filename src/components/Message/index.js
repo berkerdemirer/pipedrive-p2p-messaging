@@ -17,12 +17,20 @@ const Message = ({ data, openThread, upvoteMessage }) => {
 	}, 1000);
 
     const isOwnComment = data.userId === userId;
+    const isUpvoted = data.upvotes.includes(userId);
 
 	const handleUpvote = () => {
 		if (!isOwnComment) {
             upvoteMessage();
 		}
-	};
+    };
+
+    const upvoteClassName = () => {
+        const className = [];
+        if (!isOwnComment) className.push("message-actions-hover")
+        if (isUpvoted) className.push("message-actions-active");
+        return className.join(' ');
+    }
 
 	return (
 		<div className="message-container">
@@ -33,18 +41,18 @@ const Message = ({ data, openThread, upvoteMessage }) => {
 				<p className="message-data-text">{data.content}</p>
 				<div className="message-actions">
 				    {data.thread && (
-						<p onClick={() => openThread()}>
+						<p className="message-actions-hover" onClick={() => openThread()}>
 							<i className="fa fa-comment-o" aria-hidden="true"></i>
 							&nbsp;
 							{data.thread.length}
 						</p>
                     )}
-					<p onClick={handleUpvote}>
+					<p className={upvoteClassName()} onClick={handleUpvote}>
 						<i className="fa fa-thumbs-o-up" aria-hidden="true"></i>
 						&nbsp;
 						{data.upvotes.length}
 					</p>
-					<p>
+					<p className="message-actions-hover">
 						<i className="fa fa-share-square-o" aria-hidden="true" />
 					</p>
 				</div>
