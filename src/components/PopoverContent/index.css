@@ -19,7 +19,7 @@
 
 .popover-text {
     font-size: 14px;
-    text-align: center;
+    text-align: start;
     margin: 5px;
 }
 .popover-text span {
