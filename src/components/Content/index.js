@@ -27,7 +27,7 @@ const Content = () => {
 
 	useEffect(() => {
 		addMessages(setMessages);
-	}, []);
+    }, []);
 
 	const createMessage = content => ({
 		id: uuid(),
@@ -48,7 +48,12 @@ const Content = () => {
         animateScroll.scrollToBottom({
             containerId: "messages-list"
         });
-	};
+    };
+
+    const handleTopicChange = topic => {
+        setThread(rootThread);
+        setTopic(topic);
+    }
 
 	const upvoteMessage = message => {
 		setMessages(messages =>
@@ -86,7 +91,7 @@ const Content = () => {
 	return (
 		<div className="container">
 			<Header />
-			<Topics topics ={topics} topicChange ={setTopic} />
+			<Topics topics ={topics} topicChange={handleTopicChange} />
 			<div className="messages" id="messages-list">
 				{filterMessages(messages).map((message, i) => (
 					<div key={message.id}>
