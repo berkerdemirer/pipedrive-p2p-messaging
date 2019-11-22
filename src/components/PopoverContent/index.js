@@ -1,4 +1,5 @@
 import React from 'react';
+import Avatar from 'react-avatar';
 import './index.css'
 import Modal from 'react-modal';
 import Iframe from 'react-iframe'
@@ -39,10 +40,17 @@ const PopoverContent = ({user}) => {
     return (
       <div className="popover-container">
           <div className="popover-text"><b>{user.name} is nearby</b></div>
-          <div className="popover-text">Interested in having a coffee</div>
-          <div className="popover-text">Interested talking about leads</div>
-          <div className="popover-text">Interested having a lunch</div>
-          <button className="get-in-touch" onClick={openModal}>Get in Touch</button>
+          <div className="popover-line"> </div>
+          <div className="popover-text">
+              <Avatar src='/assets/interests/coffee.png' round="50px" size="25" color="#d1dff0" />
+              <span> Interested in having a coffee </span>
+          </div>
+          <div className="popover-text">
+              <Avatar src='/assets/interests/deals.png' round="50px" size="25" color="#d1dff0" />
+              <span> Interested in having a leads </span>
+          </div>
+          <button className="get-in-touch" onClick={openModal}>
+              Schedule Meeting</button>
           <Modal
               isOpen={modalIsOpen}
               onRequestClose={closeModal}

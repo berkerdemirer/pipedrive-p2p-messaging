@@ -28,7 +28,7 @@ function Map2() {
 				const img = `<img src="${user.avatar}" alt="icon" style="height: 40px;
                  width: 40px;
                   border-radius: 50px;
-                  border: 1px solid green;"/>`;
+                  border: 2px solid ${user.current?'#3388ffdb':'green'};"/>`;
 
 				const customMarker = L.divIcon({
 					className: 'image-icon',

@@ -2,6 +2,7 @@ const users = {
 	1: {
 		name: 'Lex Brown',
 		company: 'Microsoft',
+		current:true,
 		avatar: '/assets/avatars/user1.jpeg',
 		location: { lat: 27.825941, lng: -82.711333 },
 	},
