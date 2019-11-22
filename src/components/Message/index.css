@@ -50,3 +50,13 @@
 .message-actions-hover:hover{
     color: #08a742;
 }
+
+/* visited link */
+a:visited, a:active, a:link   {
+    color: green;
+}
+
+/* mouse over link */
+a:hover {
+    color: cornflowerblue;
+}

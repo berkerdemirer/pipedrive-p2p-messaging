@@ -41,6 +41,7 @@ const PopoverContent = ({user}) => {
       <div className="popover-container">
           <div className="popover-text"><b>{user.name} is nearby</b></div>
           <div className="popover-line"> </div>
+
           <div className="popover-text">
               <Avatar src='/assets/interests/coffee.png' round="50px" size="25" color="#d1dff0" />
               <span> Interested in having a coffee </span>

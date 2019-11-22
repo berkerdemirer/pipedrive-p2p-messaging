@@ -54,8 +54,8 @@ const messages = [
         topic: 2,
     }, {
         id: '776df791-4f32-463f-b5e4-ed12b41b5a24',
-        userId: 4,
-        content: `What's a good book on time managment you've read recently??`,
+        userId: 3,
+        content: `Wow, Pipedrive has added something new !!`,
         sentAt: moment(start).subtract(3, 'minutes').subtract(58, 'seconds'),
         thread: [
             {

@@ -5,6 +5,8 @@ import './index.css';
 import Avatar from 'react-avatar';
 import users from '../../data/users';
 
+
+
 const userId = 1;
 
 const Message = ({ data, openThread, upvoteMessage }) => {
@@ -38,7 +40,19 @@ const Message = ({ data, openThread, upvoteMessage }) => {
 			<div className="message-data">
 				<p className="message-data-user">{user.name}</p>
 				<span className="message-data-time">{sentAt}</span>
-				<p className="message-data-text">{data.content}</p>
+				<p className="message-data-text">{data.content}
+					{data.id==='776df791-4f32-463f-b5e4-ed12b41b5a24'?
+						<span className="message-link">
+							<a
+								href='https://support.pipedrive.com/hc/en-us/articles/360001930658-Insights-feature-Beta-'>
+							Here is there article</a>
+						</span>
+						:null}
+				</p>
+				{data.id==='776df791-4f32-463f-b5e4-ed12b41b5a24'?
+					<img src='https://support.pipedrive.com/hc/article_attachments/360003115857/Screen_Shot_2019-06-26_at_7.20.18_PM.png'/>
+				:null}
+
 				<div className="message-actions">
 				    {data.thread && (
 						<p className="message-actions-hover" onClick={() => openThread()}>
