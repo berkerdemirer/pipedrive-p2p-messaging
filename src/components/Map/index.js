@@ -3,6 +3,7 @@ import { Map, TileLayer, Marker, Popup } from 'react-leaflet';
 import './index.css';
 import users from '../../data/users';
 import L from 'leaflet';
+import PopoverContent from "../PopoverContent";
 
 function Map2() {
 	useEffect(() => {
@@ -40,23 +41,7 @@ function Map2() {
 						{' '}
 						<Marker position={[user.location.lat, user.location.lng]} icon={customMarker}>
 							<Popup>
-								<div style={{ display: 'grid' }}>
-									{user.name} is nearby
-									<button
-										style={{
-											width: '90px',
-											height: 30,
-											marginTop: 10,
-											backgroundColor: '#08a742',
-											color: '#fff',
-											fontWeight: 600,
-										}}
-										id="person"
-									>
-										{' '}
-										Get in Touch
-									</button>
-								</div>
+								<PopoverContent user={user}/>
 							</Popup>
 						</Marker>
 					</span>
