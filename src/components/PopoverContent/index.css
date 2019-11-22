@@ -7,6 +7,16 @@
     font-weight: 600
 }
 
+.close {
+    width: 15%;
+    float: right;
+    height: 30px;
+    margin-top: 10px;
+    background-color: #ff5d58;
+    color: #fff;
+    font-weight: 600
+}
+
 .popover-text {
     font-size: 14px;
 }
