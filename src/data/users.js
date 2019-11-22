@@ -15,7 +15,7 @@ const users = {
 		name: 'Coriena Merejo',
 		company: 'Uber',
 		avatar: '/assets/avatars/user3.jpeg',
-		location: { lat: 27.836148, lng: -82.702874 },
+		location: { lat: 27.836648, lng: -82.703874 },
 	},
 	4: {
 		name: 'Jodie Rose',
