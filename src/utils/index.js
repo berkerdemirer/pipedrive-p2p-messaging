@@ -53,7 +53,7 @@ export function renderMap() {
                 margin-top: 10px;
                 background-color: #08a742;
                 color: #fff;
-                font-weight: 600;"> Get in Touch 
+                font-weight: 600;" id="person"> Get in Touch 
                 </button> 
                 
         </div>`;
