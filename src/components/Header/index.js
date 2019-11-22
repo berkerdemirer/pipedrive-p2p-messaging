@@ -5,7 +5,7 @@ const Header = () => {
     return (
         <div className="header">
             <img src="/assets/Pipedrive_full_logo_dark.png" alt="logo" className="logo"/>
-            <div className="subtitle">nearby</div>
+            <div className="subtitle">connect</div>
         </div>
     );
 };

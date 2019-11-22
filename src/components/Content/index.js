@@ -20,7 +20,7 @@ const Content = () => {
 	const [thread, setThread] = useState(rootThread);
 	const topics = [
 		{ id: 1, name: 'Knowledge', img: '/assets/topics/knowledge.png' },
-		{ id: 2, name: 'Issues', img: '/assets/topics/issue.png' },
+		{ id: 2, name: 'Optimize', img: '/assets/topics/issue.png' },
 		{ id: 3, name: 'Random', img: '/assets/topics/random.png' },
     ];
     const [topic, setTopic] = useState(topics[0]);

@@ -2,9 +2,8 @@ const users = {
 	1: {
 		name: 'Lex Brown',
 		company: 'Microsoft',
-		current:true,
 		avatar: '/assets/avatars/user1.jpeg',
-		location: { lat: 27.825941, lng: -82.711333 },
+		location: { lat: 27.836108, lng: -82.702463 },
 	},
 	2: {
 		name: 'Adam Bermudez',
@@ -22,7 +21,8 @@ const users = {
 		name: 'Jodie Rose',
 		company: 'Bank of America',
 		avatar: '/assets/avatars/user4.jpeg',
-		location: { lat: 27.836108, lng: -82.702463 },
+		location: { lat: 27.825941, lng: -82.711333 },
+		current:true,
 	},
 	5: {
 		name: 'Samantha Dedea',
