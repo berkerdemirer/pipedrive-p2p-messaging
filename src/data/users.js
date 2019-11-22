@@ -1,9 +1,10 @@
 const users = {
 	1: {
-		name: 'Lex Brown',
-		company: 'Microsoft',
-		avatar: '/assets/avatars/user1.jpeg',
-		location: { lat: 27.836108, lng: -82.702463 },
+		name: 'Jodie Rose',
+		company: 'Bank of America',
+		avatar: '/assets/avatars/user4.jpeg',
+		location: { lat: 27.825941, lng: -82.711333 },
+		current:true,
 	},
 	2: {
 		name: 'Adam Bermudez',
@@ -18,11 +19,10 @@ const users = {
 		location: { lat: 27.836648, lng: -82.703874 },
 	},
 	4: {
-		name: 'Jodie Rose',
-		company: 'Bank of America',
-		avatar: '/assets/avatars/user4.jpeg',
-		location: { lat: 27.825941, lng: -82.711333 },
-		current:true,
+		name: 'Lex Brown',
+		company: 'Microsoft',
+		avatar: '/assets/avatars/user1.jpeg',
+		location: { lat: 27.836108, lng: -82.702463 },
 	},
 	5: {
 		name: 'Samantha Dedea',
