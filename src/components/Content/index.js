@@ -80,8 +80,8 @@ const Content = () => {
 			return (
 				<div className="message-thread-header">
 					<span className="message-thread-text">Thread</span>
-					<span className="message-thread-close" onClick={() => setThread(rootThread)}>
-						<i className="fa fa-times" aria-hidden="true"></i>
+					<span className="message-thread-close">
+						<i className="fa fa-times" aria-hidden="true" onClick={() => setThread(rootThread)}></i>
 					</span>
 				</div>
 			);
@@ -97,7 +97,7 @@ const Content = () => {
 					<div key={message.id}>
 						<Message
 							data={message}
-							openThread={() => thread === rootThread && setThread(message.id)}
+							openThread={() => thread === rootThread ? setThread(message.id): setThread(rootThread)}
 							upvoteMessage={() => upvoteMessage(message)}
 						/>
 						{renderThreadLink(message, i)}

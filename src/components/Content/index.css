@@ -26,3 +26,11 @@
     align-self: flex-end;
     text-align: end;
 }
+
+.message-thread-close i{
+    padding: 5px;
+}
+
+.message-thread-close i:hover{
+    color: #08a742;
+}
