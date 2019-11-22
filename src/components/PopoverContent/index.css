@@ -1,0 +1,12 @@
+.get-in-touch {
+    width: 100%;
+    height: 30px;
+    margin-top: 10px;
+    background-color: #08a742;
+    color: #fff;
+    font-weight: 600
+}
+
+.popover-text {
+    font-size: 14px;
+}
